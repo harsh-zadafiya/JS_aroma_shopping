@@ -1,0 +1,148 @@
+/* INITIALIZE CSS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "interstate-condensed", sans-serif;
+  color: #1f1f1f;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #686868;
+}
+
+.am-bg-dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.am-mt {
+  margin-top: 0.5rem;
+}
+
+.am-mt-1 {
+  margin-top: 1rem;
+}
+
+.am-mb {
+  margin-bottom: 0.5rem;
+}
+
+.am-mb-2 {
+  margin-bottom: 2rem;
+}
+
+.am-m-0 {
+  margin: 0px;
+}
+
+.am-m-2 {
+  margin: 2rem;
+}
+
+.am-bg-white {
+  background-color: #fff;
+}
+
+.am-shadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.am-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #1f1f1f;
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.am-btn-primary:hover {
+  color: #1f1f1f;
+  background-color: #fff;
+  font-size: 1.5rem;
+  border: 1px solid;
+}
+
+.am-text-xl {
+  font-size: 5rem;
+}
+
+.am-text-l {
+  font-size: 3rem;
+}
+
+.am-text-md {
+  font-size: 2.5rem;
+}
+
+.am-text-sm {
+  font-size: 1.5rem;
+}
+
+.am-text-xs {
+  font-size: 0.5rem;
+}
+
+.am-text-gray {
+  color: #cfcfcf;
+}
+
+.b-btn {
+  border: 1px solid #1f1f1f;
+  padding: 4px 6px;
+  border-radius: 50rem;
+  color: #fff;
+  background-color: #1f1f1f;
+}
+
+.b-btn:hover {
+  color: #1f1f1f;
+  background-color: transparent;
+}
+
+.am-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.am-text-center {
+  text-align: center;
+}
+
+.am-w-100 {
+  width: 100%;
+}
+
+.text-yellow {
+  color: #ffa601;
+}
+
+.am-br-1 {
+  border-radius: 1rem;
+}
+
+.am-br-b-1 {
+  border-radius: 0px 0px 1rem 1rem;
+}
+
+.am-pointer {
+  cursor: pointer;
+}

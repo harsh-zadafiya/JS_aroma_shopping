@@ -1,0 +1,90 @@
+/* NAVBAR */
+/* ========== START NAVBAR =============== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+nav .am-left {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 1.5rem;
+  font-size: 1.5rem;
+}
+
+nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #ffa601;
+}
+
+nav .active {
+  border-bottom: 2px solid #ffa601;
+  color: #fff;
+}
+
+nav .am-left .am-logo {
+  margin-right: 2rem;
+}
+
+nav .am-logo > a {
+  color: #fff;
+  border-bottom: none;
+}
+
+nav .am-logo > a:hover {
+  color: #ffa601;
+}
+
+nav .am-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .am-right {
+  display: flex;
+}
+
+/*
+  TABLET VIEW
+  On screens that are 1024px or less, tablet devices  
+*/
+@media screen and (max-width: 1024px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .am-left,
+  .am-right {
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 2rem;
+  }
+}
+
+/* 
+  MOBILE VIEW
+  On screens that are 760px or less, mobile devices 
+*/
+@media screen and (max-width: 760px) {
+  nav {
+    padding: 0;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========== END NAVBAR =============== */

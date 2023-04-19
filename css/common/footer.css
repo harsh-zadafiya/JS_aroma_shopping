@@ -1,0 +1,97 @@
+/* FOOTER */
+/* ========== START FOOTER =============== */
+
+.am-info .am-logo-wrapper .am-logo-link {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+footer input {
+  border-radius: 5rem;
+  padding: 0.7rem;
+  background: transparent;
+  border: 1px solid #ffa601;
+}
+
+footer input:focus-visible {
+  outline: 1px solid #ffa601;
+  color: #fff;
+}
+
+.am-info {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5rem 4rem;
+  background: #000;
+  color: #fff;
+}
+
+.am-info .am-left-side > h2,
+.am-right-side > h2 {
+  color: #ffa601;
+}
+
+.am-info .am-left-side ul li > a,
+.am-right-side > h3,
+.am-right-side h3 > a {
+  color: #e0dcd9;
+}
+
+.am-right-side h3 > a {
+  font-size: 1.17em;
+  line-height: 26px;
+  font-weight: bold;
+}
+
+footer .am-input-wrapper,
+.am-inner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer .am-left {
+  padding: 0;
+}
+
+footer #copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222222;
+}
+
+footer #copyright a,
+#copyright h3,
+#copyright span {
+  color: #fff;
+}
+
+/*
+  TABLET VIEW
+  On screens that are 1024px or less, tablet devices  
+*/
+@media screen and (max-width: 1024px) {
+}
+
+/* 
+  MOBILE VIEW
+  On screens that are 760px or less, mobile devices 
+*/
+@media screen and (max-width: 760px) {
+  .am-info {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .am-left-side,
+  .am-right-side {
+    text-align: center;
+  }
+}
+
+/* ========== END FOOTER =============== */

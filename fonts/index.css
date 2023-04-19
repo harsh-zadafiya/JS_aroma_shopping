@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "interstate-condensed";
+  src: url("./Interstate Compressed Bold.otf"),
+    url("./Interstate Compressed Bold.ttf") format("truetype"),
+    url("./Interstate Compressed Bold.svg") format("svg");
+}
+
+@font-face {
+  font-family: "harman-sans";
+  src: url("./harman-sans-font/Harman-Sans.otf"),
+    url("./harman-sans-font/Harman-Sans.ttf") format("truetype"),
+    url("./harman-sans-font/Harman-Sans.svg") format("svg");
+}

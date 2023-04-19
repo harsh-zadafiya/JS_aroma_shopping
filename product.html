@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- START COMMON CSS -->
+    <link rel="stylesheet" href="fonts/index.css" />
+    <link rel="stylesheet" href="css/common/index.css" />
+    <link rel="stylesheet" href="css/common/navbar.css" />
+    <link rel="stylesheet" href="css/common/footer.css" />
+    <!-- END COMMON CSS -->
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="./css/product.css" />
+    <title>Products</title>
+  </head>
+
+  <body>
+    <!-- ==================== START NAVBAR ====================== -->
+    <nav class="am-bg-dark">
+      <ul class="am-left">
+        <li class="am-logo">
+          <a href="./index.html" class="am-logo-container">
+            <img
+              alt="star-of-life-bold"
+              class="am-star_icon"
+              src="./images/icons/star-of-life-bold-white.svg"
+              width="35"
+            />
+            AROMA FASHION
+          </a>
+        </li>
+      </ul>
+      <ul class="am-right">
+        <li>
+          <a href="./index.html">Home</a>
+        </li>
+        <li>
+          <a class="active" href="./product.html">Product</a>
+        </li>
+        <li>
+          <a href="./contact-us.html">Contact Us </a>
+        </li>
+        <li>
+          <a href="./about-us.html">About Us</a>
+        </li>
+        <li>
+          <a href="./about-us.html">Cart</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- ==================== END NAVBAR ====================== -->
+
+    <!-- ==================== START BODY ====================== -->
+
+    <!-- ==================== START MAIN ====================== -->
+    <main>
+      <section class="am-sec1">
+        <h2 class="am-text-l p1">
+          All Products OF
+          <span class="text-yellow">2023</span>
+        </h2>
+        <div class="main_container">
+          <aside class="side">
+            <div class="left-container">
+              <h2>Filter</h2>
+              <h3>Shop By</h3>
+              <ul class="jp-c">
+                <li>
+                  <input type="checkbox" name="Male" id="Male" />
+                  <label for="Male">Male</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="Female" id="Female" />
+                  <label for="Female">Female</label>
+                </li>
+              </ul>
+              <h3>Categories</h3>
+              <ul class="jp-c">
+                <li>
+                  <input type="checkbox" name="Tshirt" id="Tshirt" />
+                  <label for="Tshirt">Tshirt</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="Shirt" id="Shirt" />
+                  <label for="Shirt">Shirt</label>
+                </li>
+              </ul>
+
+              <h3>Brand</h3>
+              <ul class="jp-c">
+                <li>
+                  <input type="checkbox" name="Roadster" id="Roadster" />
+                  <label for="Roadster">Adidas</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="Puma" id="Puma" />
+                  <label for="Puma">Puma</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="Wrogn" id="Wrogn" />
+                  <label for="Wrogn">CKs</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="USPolo" id="US_Polo" />
+                  <label for="USPolo">US Polo</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="Nike" id="Nike" />
+                  <label for="Nike">Nike</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="Jordan" id="Jordan" />
+                  <label for="Jordan">Jordan</label>
+                </li>
+              </ul>
+              <h3>Price</h3>
+              <ul class="jp-c">
+                <li>
+                  <input type="checkbox" name="a100-500" />
+                  <label for="a100-500">$100 - $500</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="a501-1000" />
+                  <label for="a501-1000">$501 - $1000</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="a1001-1500" />
+                  <label for="a1001-1500">$1001 - $1500</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="a1501-2000" />
+                  <label for="a1501-2000">$1501 - $2000</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="a2000" />
+                  <label for="a2000">$2000+</label>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <div class="right-container">
+            <select class="am-br-1">
+              <option>Default Sorting</option>
+              <option>Price Low to High</option>
+              <option>Price High to Low</option>
+              <option>By Popularity</option>
+              <option>By Rating</option>
+              <option>By Sale</option>
+            </select>
+            <select class="am-br-1 d-none">
+              <option>Shop By</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+            <select class="am-br-1 d-none">
+              <option>Categories</option>
+              <option>Tshirt</option>
+              <option>Shirt</option>
+            </select>
+            <div class="product-container">
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/joel-muniz-juKjPjVBza8-unsplash.jpg"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Cavaliers SweatShirt by Nike</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$504.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/gui-franca-tCDPZO9S6Go-unsplash.jpg"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Polo Ralph Lauren</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$785.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/jorge-salvador-iGzHMzRZjRs-unsplash.jpg"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Allen Solly Shirt</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$269.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/jorge-salvador-iGzHMzRZjRs-unsplash.jpg"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Calvin Klein Sweater</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$200.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/pro2-Polo Ralph Lauren-12990.png"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">SELECTED Blazer</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$270.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/pro3-allen solly - 2369.png"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Anubhutte Dress</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$1059.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/good-faces-aP8KhiHbSvo-unsplash.jpg"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Harmon Kardon Headphones</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$650.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/sahil-moosa-s27B05TjXxw-unsplash.jpg"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Steve Madden Heels</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$200.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="product_list">
+                <img
+                  class="am-br-1"
+                  src="images/products/mediamodifier-ogmenj2NGho-unsplash.jpg"
+                  alt=""
+                />
+                <div class="card-body">
+                  <div class="card-title am-mt am-text-center">
+                    <h2 class="am-m-0">Fossil Smart Watch</h2>
+                  </div>
+                  <div class="card-desc am-mt">
+                    <span class="am-text-sm">$779.00</span>
+                    <a class="am-center" href="./product.html">
+                      <span class="b-btn">Details</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="page-btn am-center">
+              <span class="am-br-1">&#8592;</span>
+              <span class="am-br-1">1</span>
+              <span class="am-br-1">2</span>
+              <span class="am-br-1">3</span>
+              <span class="am-br-1">4</span>
+              <span class="am-br-1">5</span>
+              <span class="am-br-1">&#8594;</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==================== END BODY ====================== -->
+    </main>
+    <!-- ==================== END MAIN ====================== -->
+
+    <!-- ==================== START FOOTER ====================== -->
+    <footer>
+      <div class="am-info">
+        <div class="am-logo-wrapper">
+          <div class="am-inner-wrapper">
+            <a href="./index.html" class="am-logo-link">
+              <img
+                alt="star-of-life-bold"
+                class="am-star_icon"
+                src="./images/icons/star-of-life-bold-white.svg"
+                width="35"
+              />
+              AROMA FASHION
+            </a>
+          </div>
+          <div class="am-input-wrapper am-mt-1">
+            <input
+              type="text"
+              class="am-input"
+              placeholder="Enter your email!"
+            />
+            <a class="am-btn-primary am-mt-1" href="./index.html">SUBMIT</a>
+          </div>
+        </div>
+        <div class="am-left-side">
+          <h2>Quick Links</h2>
+          <ul class="am-left">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="./product.html">Product</a>
+            </li>
+            <li>
+              <a href="./contact-us.html">Contact Us</a>
+            </li>
+            <li>
+              <a href="./about-us.html">About Us</a>
+            </li>
+            <li>
+              <a href="./add_to_cart.html">Cart</a>
+            </li>
+          </ul>
+        </div>
+        <div class="am-right-side">
+          <h2>Contact Us</h2>
+          <h3>344, Batavia Place, North Waterloo</h3>
+          <h3>(906)-999-2297 (9am - 5pm EST, Monday - Friday)</h3>
+          <h3>
+            <a href="mailto:service@aromafashion.com"
+              >service@aromafashion.com</a
+            >
+          </h3>
+        </div>
+      </div>
+      <div id="copyright">
+        <h3>
+          <span>&#169; 2023</span> <a href="./index.html">Aroma Fashion</a> -
+          All Rights Reserved.
+        </h3>
+      </div>
+    </footer>
+    <!-- ==================== END FOOTER ====================== -->
+  </body>
+</html>
