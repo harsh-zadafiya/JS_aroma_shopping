@@ -1,0 +1,16 @@
+{
+  "categorys": [
+    {
+      "cat_id": 1,
+      "name": "t-shirt"
+    },
+    {
+      "cat_id": 2,
+      "name": "shirt"
+    },
+    {
+      "cat_id": 3,
+      "name": "jeans"
+    }
+  ]
+}
