@@ -1,97 +1,85 @@
 "use strict";
 
+// imported products & pricing information
 import all_list_products from "../data/products.json" assert { type: "json" };
+import all_pricing from "../data/pricing.json" assert { type: "json" };
+import all_genders from "../data/gender.json" assert { type: "json" };
 
-// define global variables
-let all_products = [];
-let all_pricing = [];
+// global variables
+const filter = [];
 
-// common function to display the output of all tasks
-const displayPricing = (list) => {
-  // get all tasks which are not done
-  const list_of_tasks = list.filter((task) => !task.isDone);
-
-  // display all the task to the ALL TASK TAB
-  const html_of_all_list_of_tasks = taskList(list);
-  $("#list_of_tasks").html(html_of_all_list_of_tasks);
+// common function to display the output of all pricing
+const displayPricing = (pricings) => {
+  const html_of_all_list_of_pricings = pricingList(pricings);
+  $("#pricing_list").html(html_of_all_list_of_pricings);
 };
 
-// creating a list of tasks html elements
-const taskList = (list_of_tasks) => {
+// creating a list of prices html elements
+const pricingList = (list_of_pricings) => {
   let html = "";
 
   // asssign css classes based on the task status and priority
-  for (var i = 0; i < list_of_tasks.length; i++) {
-    let priorityClass = "bg-primary";
-
-    if (list_of_tasks[i].priority == "high") {
-      priorityClass = "bg-danger";
-    } else if (list_of_tasks[i].priority == "medium") {
-      priorityClass = "bg-warning";
-    }
-
-    // if task is done than hide the done button & add like on the that task
-    let disNone = "d-none";
-    let isTaskDone = " text-decoration-line-through";
-    if (!list_of_tasks[i].isDone) {
-      disNone = "";
-      isTaskDone = "";
-    }
-
+  for (var i = 0; i < list_of_pricings.length; i++) {
     // concating all the task in the html variable
+
+    const pricingFilter = [
+      list_of_pricings[i].min_price,
+      list_of_pricings[i].max_price,
+    ];
+
     html +=
-      '<li class="list-group-item d-flex-center   " >' +
-      '<span class="badge rounded-pill ' +
-      priorityClass +
-      ' me-3 p-1"><span class="visually-hidden">.</span></span> <span class="' +
-      isTaskDone +
+      '<li><input type="checkbox" data-id="' +
+      pricingFilter +
+      '" name="' +
+      list_of_pricings[i].p_id +
+      '" /><label for="' +
+      list_of_pricings[i].p_id +
       '">' +
-      list_of_tasks[i].name +
-      "</span> " +
-      '<div class="ms-auto">' +
-      '<span class="badge rounded-pill bg-secondary me-3 p-1">' +
-      list_of_tasks[i].date +
-      " " +
-      list_of_tasks[i].time +
-      "</span>" +
-      '<button class="btn-squre btn-success btn-sm me-1 ' +
-      disNone +
-      '" onclick="markAsDoneTask(' +
-      list_of_tasks[i].id +
-      ');">' +
-      '<img class="text-white" src="' +
-      "./images/icons/check-circle.svg" +
-      '" alt="check-circle" srcset="' +
-      "./images/icons/check-circle.svg" +
-      '" width="20" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"/>' +
-      "</button>" +
-      '<button class="btn-squre btn-primary btn-sm me-1" onclick="editRow(' +
-      list_of_tasks[i].id +
-      ');">' +
-      '<img class="text-white" src="' +
-      "./images/icons/edit.svg" +
-      '" alt="trash" srcset="' +
-      "./images/icons/edit.svg" +
-      '" width="20" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"/>' +
-      "</button>" +
-      '<button class="btn-squre btn-danger btn-sm" onclick="deleteRow(' +
-      list_of_tasks[i].id +
-      ');">' +
-      '<img class="text-white" src="' +
-      "./images/icons/trash-2.svg" +
-      '" alt="trash" srcset="' +
-      "./images/icons/trash-2.svg" +
-      '" width="20" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"/>' +
-      "</button>" +
-      "</div>" +
-      "</li>";
+      list_of_pricings[i].name;
+    ("</label></li>");
   }
 
   // return the html
   return html;
 };
 
+const displayGenders = (genders) => {
+  const html_of_all_list_of_genders = genderList(genders);
+  $("#gender_list").html(html_of_all_list_of_genders);
+};
+
+// creating a list of prices html elements
+const genderList = (list_of_genders) => {
+  let html = "";
+
+  for (var i = 0; i < list_of_genders.length; i++) {
+    // concating
+    html +=
+      '<li><input type="checkbox" data-id="' +
+      list_of_genders[i].gender_id +
+      '" name="' +
+      list_of_genders[i].gender_id +
+      '" /><label for="' +
+      list_of_genders[i].gender_id +
+      '">' +
+      list_of_genders[i].name;
+    ("</label></li>");
+  }
+
+  // return the html
+  return html;
+};
+
+const filterFilter = (filterinfo) => {
+  // filter options
+  console.log(filterinfo.target.dataset.id);
+};
+
 // checking the dom is loaded or not
 $(document).ready(() => {
-  console.log("called");
+  displayPricing(all_pricing);
+  displayGenders(all_genders);
+
+  $("#pricing_list li input").click(filterFilter);
+  $("#gender_list li input").click(filterFilter);
 });
