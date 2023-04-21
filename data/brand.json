@@ -1,24 +1,22 @@
-{
-  "brands": [
-    {
-      "brand_id": 1,
-      "name": "polo"
-    },
-    {
-      "brand_id": 2,
-      "name": "hollister"
-    },
-    {
-      "brand_id": 3,
-      "name": "jeans"
-    },
-    {
-      "brand_id": 4,
-      "name": "nike"
-    },
-    {
-      "brand_id": 5,
-      "name": "allen"
-    }
-  ]
-}
+[
+  {
+    "brand_id": 1,
+    "name": "polo"
+  },
+  {
+    "brand_id": 2,
+    "name": "hollister"
+  },
+  {
+    "brand_id": 3,
+    "name": "jeans"
+  },
+  {
+    "brand_id": 4,
+    "name": "nike"
+  },
+  {
+    "brand_id": 5,
+    "name": "allen"
+  }
+]
