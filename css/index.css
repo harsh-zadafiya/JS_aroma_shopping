@@ -69,12 +69,7 @@ header .am-btn-shop-now:hover {
 /* =========================== START SECTION1  =============================*/
 .am-sec1 {
   padding: 0.8rem 4rem;
-  background: linear-gradient(
-    90deg,
-    rgba(243, 243, 243, 1) 0%,
-    rgba(239, 237, 236, 1) 50%,
-    rgba(224, 220, 217, 1) 100%
-  );
+  background-image: radial-gradient( circle 575px at 50.6% -1.5%,  rgba(241,235,156,1) 6.2%, rgba(5,134,142,1) 100.2% );
 }
 
 .am-sec1 .product-wrapper {

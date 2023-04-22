@@ -377,29 +377,6 @@ const handleFilterCriteria = (filter, max_price, min_price, id) => {
   }
 };
 
-const handleCart = (product) => {
-  const product_id = product.target.dataset.id;
-
-  if (all_cart.length > 0) {
-    const found_product = all_cart.includes(product_id);
-
-    if (found_product) {
-      return alert("Product is already added to cart!");
-    }
-
-    all_cart = [...all_cart, product_id];
-  } else {
-    all_cart.push(product_id);
-  }
-
-  // alert("Product is Added to cart!");
-
-  update_cart(all_cart.length);
-  localStorage.setItem("all_cart", JSON.stringify(all_cart));
-
-  displayProducts(all_list_products);
-};
-
 // checking the dom is loaded or not
 $(document).ready(() => {
   displayPricing(all_pricing);
@@ -408,5 +385,5 @@ $(document).ready(() => {
 
   $("#pricing_list li input").click(filterFilter);
   $("#gender_list li input").click(filterFilter);
-  $("#product_list #add_to_cart").click(handleCart);
+  $("#product_list #add1_to_cart").click(handleCart);
 });
