@@ -7,14 +7,4 @@ $(document).ready(() => {
       this.classList.toggle("active");
     });
   }
-  const update_cart = (count) => {
-    $("#cart_count").text(count);
-  };
-
-  const carts = localStorage.getItem("all_cart");
-  if (carts) {
-    all_cart = JSON.parse(carts);
-
-    update_cart(all_cart.length);
-  }
 });
