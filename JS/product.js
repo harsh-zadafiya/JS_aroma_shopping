@@ -1,9 +1,213 @@
 "use strict";
 
-// imported products & pricing information
-import all_list_products from "../data/products.json" assert { type: "json" };
-import all_pricing from "../data/pricing.json" assert { type: "json" };
-import all_genders from "../data/gender.json" assert { type: "json" };
+const all_genders = [
+  {
+    gender_id: 1,
+    name: "male",
+  },
+  {
+    gender_id: 2,
+    name: "female",
+  },
+];
+const all_pricing = [
+  {
+    p_id: 1,
+    name: "$100 - $500",
+    min_price: 100,
+    max_price: 500,
+  },
+  {
+    p_id: 2,
+    name: "$501 - $1000",
+    min_price: 501,
+    max_price: 1000,
+  },
+  {
+    p_id: 3,
+    name: "$1001 - $1500",
+    min_price: 1001,
+    max_price: 1500,
+  },
+  {
+    p_id: 4,
+    name: "$1501 - $2000",
+    min_price: 1501,
+    max_price: 2000,
+  },
+  {
+    p_id: 4,
+    name: "$2001+",
+    min_price: 2001,
+    max_price: 100000,
+  },
+];
+const all_list_products = [
+  {
+    id: 1,
+    title: "Cavaliers SweatShirt by Nike",
+    description: "This is a good product",
+    gender: "male",
+    price: 504.0,
+    city: "waterloo",
+    category: "t-shirt",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "nike",
+    url: "./images/products/joel-muniz-juKjPjVBza8-unsplash.jpg",
+  },
+  {
+    id: 2,
+    title: "Polo Ralph Lauren",
+    description: "This is a good product",
+    gender: "male",
+    price: 785.0,
+    city: "waterloo",
+    category: "t-shirt",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "polo",
+    url: "./images/products/gui-franca-tCDPZO9S6Go-unsplash.jpg",
+  },
+  {
+    id: 3,
+    title: "Cavaliers SweatShirt by Nike",
+    description: "This is a good product",
+    gender: "male",
+    price: 400.0,
+    city: "kitchner",
+    category: "t-shirt",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "nike",
+    url: "./images/products/gui-franca-tCDPZO9S6Go-unsplash.jpg",
+  },
+  {
+    id: 4,
+    title: "Allen Solly Shirt",
+    description: "This is a new product",
+    gender: "male",
+    price: 504.0,
+    city: "waterloo",
+    category: "t-shirt",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "allen",
+    url: "./images/products/jorge-salvador-iGzHMzRZjRs-unsplash.jpg",
+  },
+  {
+    id: 5,
+    title: "MID-RISE DARK WASH BOOT JEANS",
+    description:
+      "Our new Soft Stretch jeans are as soft as your sweats, as stretchy as your leggings and as versatile as your current wear-with-everything pair.",
+    gender: "female",
+    price: 37.06,
+    city: "waterloo",
+    category: "jeans",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_355-1098-0632-276_model1.jpg",
+  },
+  {
+    id: 6,
+    title: "COTTON CREW BABY TEE",
+    description:
+      "For orders containing only Gift Cards, standard shipping cost is FREE. Gift Cards are shipped separately from merchandise and cannot be delivered to a P.O. Box.",
+    gender: "female",
+    price: 13.96,
+    city: "waterloo",
+    category: "jeans",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_339-3275-1884-100_model1.jpg",
+  },
+  {
+    id: 7,
+    title: "LOW-RISE DARK WASH Y2K BOOT JEANS",
+    description:
+      "For orders containing only Gift Cards, standard shipping cost is FREE. Gift Cards are shipped separately from merchandise and cannot be delivered to a P.O. Box.",
+    gender: "female",
+    price: 34.77,
+    city: "cambridge",
+    category: "jeans",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_355-2326-0727-276_model1.jpg",
+  },
+  {
+    id: 8,
+    title: "COTTON CREW BABY TEE",
+    description:
+      "For orders containing only Gift Cards, standard shipping cost is FREE. Gift Cards are shipped separately from merchandise and cannot be delivered to a P.O. Box.",
+    gender: "female",
+    price: 13.96,
+    city: "cambridge",
+    category: "tee",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_355-2326-0727-276_model1.jpg",
+  },
+  {
+    id: 9,
+    title: "HIGH-RISE RIPPED MEDIUM WASH VINTAGE FLARE JEANS",
+    description:
+      "Gift Cards are shipped separately from merchandise and cannot be delivered to a P.O. Box.",
+    gender: "female",
+    price: 2000.77,
+    city: "cambridge",
+    category: "jeans",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_355-2293-6502-279_model1.jpg",
+  },
+  {
+    id: 10,
+    title: "CURVY HIGH-RISE MEDIUM WASH SUPER SKINNY JEANS",
+    description:
+      "For orders containing only Gift Cards, standard shipping cost is FREE. Gift Cards are shipped separately from merchandise and cannot be delivered to a P.O. Box.",
+    gender: "female",
+    price: 500.96,
+    city: "cambridge",
+    category: "jeans",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_355-2595-0585-278_model1.jpg",
+  },
+  {
+    id: 11,
+    title: "COTTON CREW BABY TEE",
+    description:
+      "For orders containing only Gift Cards, standard shipping cost is FREE. Gift Cards are shipped separately from merchandise and cannot be delivered to a P.O. Box.",
+    gender: "female",
+    price: 20.96,
+    city: "cambridge",
+    category: "tee",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_339-3261-1883-201_model1.jpg",
+  },
+  {
+    id: 12,
+    title: "HIGH-RISE BLACK SPLIT HEM VINTAGE FLARE JEANS",
+    description:
+      "For orders containing only Gift Cards, standard shipping cost is FREE. Gift Cards are shipped separately from merchandise and cannot be delivered to a P.O. Box.",
+    gender: "female",
+    price: 250.0,
+    city: "cambridge",
+    category: "jeans",
+    is_visible: true,
+    is_in_cart: false,
+    brand: "hollister",
+    url: "./images/products/KIC_355-2292-6501-975_model1.jpg",
+  },
+];
 
 // global variables
 let filter_price_list = [];
@@ -90,9 +294,9 @@ const displayProducts = (products) => {
 const productList = (list_of_products) => {
   let html = "";
 
-  if (list_of_products.length == 0) {
-    return '<div class="am-center"> No Product Available!</div>';
-  }
+  // if (list_of_products.length == 0) {
+  //   return '<div class="am-center"> No Product Available!</div>';
+  // }
 
   for (var i = 0; i < list_of_products.length; i++) {
     let btn_class = "";
@@ -188,7 +392,7 @@ const handleCart = (product) => {
     all_cart.push(product_id);
   }
 
-  alert("Product is Added to cart!");
+  // alert("Product is Added to cart!");
 
   update_cart(all_cart.length);
   localStorage.setItem("all_cart", JSON.stringify(all_cart));
