@@ -8,6 +8,19 @@ import all_genders from "../data/gender.json" assert { type: "json" };
 // global variables
 let filter_price_list = [];
 let filter_gender_list = [];
+let all_cart = [];
+
+const update_cart = (count) => {
+  $("#cart_count").text(count);
+};
+
+const carts = localStorage.getItem("all_cart");
+if (carts) {
+  all_cart = JSON.parse(carts);
+
+  update_cart(all_cart.length);
+  console.log("all_cart :: ", all_cart);
+}
 
 // common function to display the output of all pricing
 const displayPricing = (pricings) => {
@@ -82,6 +95,14 @@ const productList = (list_of_products) => {
   }
 
   for (var i = 0; i < list_of_products.length; i++) {
+    let btn_class = "";
+    let text = "add to cart";
+    if (all_cart.includes(list_of_products[i].id.toString())) {
+      btn_class = "btn-danger";
+      text = "In Cart";
+    }
+
+    console.log(all_cart.includes(list_of_products[i].id.toString()));
     // concating
     html +=
       '<div class="product_list">' +
@@ -94,7 +115,7 @@ const productList = (list_of_products) => {
       "<div class='card-desc am-mt'><span class='am-text-sm'>" +
       list_of_products[i].price +
       `</span><button id="add_to_cart" data-id=${list_of_products[i].id}` +
-      ` class="b-btn am-center">add to cart</button>` +
+      ` class="b-btn ${btn_class} am-center">${text}</button>` +
       "</div>" +
       "</div></div>";
   }
@@ -153,7 +174,28 @@ const handleFilterCriteria = (filter, max_price, min_price, id) => {
 };
 
 const handleCart = (product) => {
-  console.log("product :: ", JSON.parse(product.target.dataset.id));
+  const product_id = product.target.dataset.id;
+
+  if (all_cart.length > 0) {
+    const found_product = all_cart.includes(product_id);
+
+    if (found_product) {
+      return alert("Product is already added to cart!");
+    }
+
+    console.log("product :: ", product_id);
+    all_cart = [...all_cart, product_id];
+  } else {
+    all_cart.push(product_id);
+  }
+
+  alert("Product is Added to cart!");
+  update_cart(all_cart.length);
+  localStorage.setItem("all_cart", JSON.stringify(all_cart));
+
+  displayProducts(all_list_products);
+
+  console.log("all_cart : ", all_cart);
 };
 
 // checking the dom is loaded or not

@@ -150,3 +150,7 @@ a {
 .p-1 {
   padding: 10px;
 }
+
+.b-btn.btn-danger {
+  background-color: #ffa601;
+}

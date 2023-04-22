@@ -1,13 +1,4 @@
 $(document).ready(function () {
-  $(".product-wrapper").slick({
-    dots: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    adaptiveHeight: true,
-  });
-
   const update_cart = (count) => {
     $("#cart_count").text(count);
   };
