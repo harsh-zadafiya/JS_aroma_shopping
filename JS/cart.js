@@ -8,6 +8,5 @@ $(document).ready(function () {
     all_cart = JSON.parse(carts);
 
     update_cart(all_cart.length);
-    console.log("all_cart :: ", all_cart);
   }
 });

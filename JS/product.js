@@ -183,19 +183,17 @@ const handleCart = (product) => {
       return alert("Product is already added to cart!");
     }
 
-    console.log("product :: ", product_id);
     all_cart = [...all_cart, product_id];
   } else {
     all_cart.push(product_id);
   }
 
   alert("Product is Added to cart!");
+
   update_cart(all_cart.length);
   localStorage.setItem("all_cart", JSON.stringify(all_cart));
 
   displayProducts(all_list_products);
-
-  console.log("all_cart : ", all_cart);
 };
 
 // checking the dom is loaded or not
