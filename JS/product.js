@@ -6,7 +6,8 @@ import all_pricing from "../data/pricing.json" assert { type: "json" };
 import all_genders from "../data/gender.json" assert { type: "json" };
 
 // global variables
-const filter = [];
+let filter_price_list = [];
+let filter_gender_list = [];
 
 // common function to display the output of all pricing
 const displayPricing = (pricings) => {
@@ -22,17 +23,14 @@ const pricingList = (list_of_pricings) => {
   for (var i = 0; i < list_of_pricings.length; i++) {
     // concating all the task in the html variable
 
-    const pricingFilter = [
-      list_of_pricings[i].min_price,
-      list_of_pricings[i].max_price,
-    ];
-
     html +=
-      '<li><input type="checkbox" data-id=' +
-      pricingFilter +
-      ' name="' +
+      '<li><input type="radio" data-filter="pricing" data-min_price=' +
+      list_of_pricings[i].min_price +
+      " data-max_price=" +
+      list_of_pricings[i].max_price +
+      " data-id=" +
       list_of_pricings[i].p_id +
-      '" /><label for="' +
+      ' name="price"/><label for="' +
       list_of_pricings[i].p_id +
       '">' +
       list_of_pricings[i].name +
@@ -55,8 +53,8 @@ const genderList = (list_of_genders) => {
   for (var i = 0; i < list_of_genders.length; i++) {
     // concating
     htmlNew +=
-      '<li><input type="checkbox" data-id=' +
-      list_of_genders[i].gender_id +
+      '<li><input type="checkbox" data-filter="gender" data-id=' +
+      list_of_genders[i].name +
       ' name="' +
       list_of_genders[i].gender_id +
       '" /><label for="' +
@@ -78,6 +76,10 @@ const displayProducts = (products) => {
 // creating a list of prices html elements
 const productList = (list_of_products) => {
   let html = "";
+
+  if (list_of_products.length == 0) {
+    return '<div class="am-center"> No Product Available!</div>';
+  }
 
   for (var i = 0; i < list_of_products.length; i++) {
     // concating
@@ -103,7 +105,51 @@ const productList = (list_of_products) => {
 
 const filterFilter = (filterinfo) => {
   // filter options
-  console.log(filterinfo.target.dataset);
+  const { filter, max_price, min_price, id } = filterinfo.target.dataset;
+  handleFilterCriteria(filter, max_price, min_price, id);
+};
+
+const handleFilterCriteria = (filter, max_price, min_price, id) => {
+  let filtered_products = [];
+  if (filter == "pricing") {
+    if (filter_price_list.length == 0) {
+      filter_price_list.push(id);
+    } else {
+      if (filter_price_list.includes(id)) {
+        filter_price_list = filter_price_list.filter((d) => d != id);
+      } else {
+        filter_price_list = [...filter_price_list, id];
+      }
+    }
+
+    filtered_products = [
+      ...filtered_products,
+      ...all_list_products.filter(
+        (d) => parseInt(min_price) >= d.price && d.price <= parseInt(max_price)
+      ),
+    ];
+  } else if (filter == "gender") {
+    if (filter_gender_list.length == 0) {
+      filter_gender_list.push(id);
+    } else {
+      if (filter_gender_list.includes(id)) {
+        filter_gender_list = filter_gender_list.filter((d) => d != id);
+      } else {
+        filter_gender_list = [...filter_gender_list, id];
+      }
+    }
+
+    filtered_products = [
+      ...filtered_products,
+      ...all_list_products.filter((d) => filter_gender_list.includes(d.gender)),
+    ];
+  }
+
+  if (filter_gender_list.length == 0 && filter_price_list.length == 0) {
+    displayProducts(all_list_products);
+  } else {
+    displayProducts(filtered_products);
+  }
 };
 
 const handleCart = (product) => {
