@@ -72,9 +72,7 @@ header .hz-text-desc {
   display: flex;
   justify-content: space-around;
 }
-/* =========================== END SECTION1  =============================*/
 
-/* =========================== START SECTION2  =============================*/
 .hz-sec2 {
   padding: 0.8rem 4rem;
 }
@@ -149,9 +147,6 @@ header .hz-text-desc {
   display: none;
 }
 
-/* =========================== END SECTION2  =============================*/
-
-/* =========================== START SECTION3  =============================*/
 .hz-sec3 {
   padding: 0.8rem 4rem;
   background: linear-gradient(
@@ -217,11 +212,9 @@ header .hz-text-desc {
 .text-soon-container .text-large {
   font-size: 2.5rem;
 }
-/* =========================== END SECTION4  =============================*/
 
-/* =========================== START SECTION5  =============================*/
 .hz-sec5 {
-  padding: 0.8rem 4rem;
+  padding: 2rem 4rem;
   background: linear-gradient(
     90deg,
     rgba(243, 243, 243, 1) 0%,
@@ -232,7 +225,7 @@ header .hz-text-desc {
 
 .hz-sec5 .feature-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 0.5rem;
 }
 
@@ -241,10 +234,12 @@ header .hz-text-desc {
 }
 
 .feature-info-container > img {
-  opacity: 0.4;
+  opacity: 0.7;
 }
 
 .feature-text {
+  font-size: 2.5rem;
+  color: #fff;
   position: absolute;
 }
 
