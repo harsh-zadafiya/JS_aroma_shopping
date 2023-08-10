@@ -1,26 +1,11 @@
-/* FOOTER */
-/* ========== START FOOTER =============== */
-
-.am-info .am-logo-wrapper .am-logo-link {
+.hz-info .hz-logo-wrapper .hz-logo-link {
   text-align: center;
   display: flex;
   align-items: center;
   color: #fff;
 }
 
-footer input {
-  border-radius: 5rem;
-  padding: 0.7rem;
-  background: transparent;
-  border: 1px solid #ffa601;
-}
-
-footer input:focus-visible {
-  outline: 1px solid #ffa601;
-  color: #fff;
-}
-
-.am-info {
+.hz-info {
   display: flex;
   justify-content: space-evenly;
   padding: 5rem 4rem;
@@ -28,32 +13,26 @@ footer input:focus-visible {
   color: #fff;
 }
 
-.am-info .am-left-side > h2,
-.am-right-side > h2 {
+.hz-info .hz-left-side > h2,
+.hz-right-side > h2 {
   color: #ffa601;
 }
 
-.am-info .am-left-side ul li > a,
-.am-right-side > h3,
-.am-right-side h3 > a {
+.hz-info .hz-left-side ul li > a,
+.hz-right-side > h3,
+.hz-right-side h3 > a {
   color: #e0dcd9;
 }
 
-.am-right-side h3 > a {
+.hz-right-side h3 > a {
   font-size: 1.17em;
   line-height: 26px;
   font-weight: bold;
 }
 
-footer .am-input-wrapper,
-.am-inner-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
-footer .am-left {
+
+footer .hz-left {
   padding: 0;
 }
 
@@ -82,16 +61,14 @@ footer #copyright a,
   On screens that are 760px or less, mobile devices 
 */
 @media screen and (max-width: 760px) {
-  .am-info {
+  .hz-info {
     display: flex;
     flex-direction: column;
     padding: 2rem 1rem;
   }
 
-  .am-left-side,
-  .am-right-side {
+  .hz-left-side,
+  .hz-right-side {
     text-align: center;
   }
 }
-
-/* ========== END FOOTER =============== */
